@@ -41,21 +41,19 @@
             password: password
         })
         if(error) {
-            if(error) {
-                const t: ToastSettings = {
-                    message: error.message,
-                    timeout: 3000
-                };
-                toastStore.trigger(t);
-            }
-            else {
-                const t: ToastSettings = {
-                    message: "Password updated successfully",
-                    timeout: 3000
-                };
-                toastStore.trigger(t);
-                goto("/")
-            }
+            const t: ToastSettings = {
+                message: error.message,
+                timeout: 3000
+            };
+            toastStore.trigger(t);
+        }
+        else {
+            const t: ToastSettings = {
+                message: "Password updated successfully",
+                timeout: 3000
+            };
+            toastStore.trigger(t);
+            goto("/")
         }
     }
 
