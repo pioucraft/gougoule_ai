@@ -53,7 +53,7 @@
                 timeout: 3000
             };
             toastStore.trigger(t);
-            goto("/")
+            goto("/login")
         }
     }
 
