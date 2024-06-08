@@ -2,8 +2,11 @@
 	import { supabase } from "$lib/supabase";
 	import { onMount } from "svelte";
 
-    onMount(() => {
-        console.log(supabase.functions.invoke("ask"))
+    onMount(async () => {
+        const { data, error } = await supabase.functions.invoke('ask', {
+            body: { foo: 'bar' }
+        })
+        console.log(data, error)
     })
     
 </script>
