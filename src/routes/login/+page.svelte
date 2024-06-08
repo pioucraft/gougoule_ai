@@ -30,7 +30,7 @@
         </label>
         <button class="mt-2 btn variant-filled-primary" on:click={login}>Log in</button>
         <button class="text-sm" on:click={magicLink}>I forgot my password</button>
-        <a class="mt-5 self-center" href="/signup">Sign up</a>
+        <a class="mt-5 btn variant-filled-secondary" href="/signup">Sign up</a>
     </form>
 </div>
 
@@ -85,6 +85,12 @@
                 timeout: 3000
             };
             toastStore.trigger(t);
+            return
         }
+        const t: ToastSettings = {
+            message: "An email has been sent with the instructions to reset your password",
+            timeout: 3000
+        };
+        toastStore.trigger(t);
     }
 </script>
