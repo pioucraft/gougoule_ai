@@ -3,9 +3,7 @@
 	import { onMount } from "svelte";
 
     onMount(async () => {
-        const { data, error } = await supabase.functions.invoke('ask', {
-            body: { foo: 'bar' }
-        })
+        const { data, error } = await supabase.functions.invoke('ask')
         console.log(data, error)
     })
     
